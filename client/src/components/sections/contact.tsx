@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+
+// Dynamically import ReCAPTCHA to disable SSR
+const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), { ssr: false });
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,6 +19,11 @@ export default function Contact() {
     subject: "",
     message: ""
   });
+
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+
+  // Correctly typed ref for ReCAPTCHA
+  const captchaRef = useRef<ReCAPTCHA | null>(null);
 
   const { toast } = useToast();
 
@@ -56,13 +65,24 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const handleCaptchaChange = (value: string | null) => {
+    setCaptchaValue(value);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
+
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Please fill in all required fields",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!captchaValue) {
+      toast({
+        title: "Please verify you are not a robot",
         variant: "destructive"
       });
       return;
@@ -74,7 +94,7 @@ export default function Contact() {
       description: "Thank you for your message! We will get back to you soon."
     });
 
-    // Reset form
+    // Reset form and captcha
     setFormData({
       name: "",
       email: "",
@@ -82,6 +102,12 @@ export default function Contact() {
       subject: "",
       message: ""
     });
+    setCaptchaValue(null);
+
+    // Reset the reCAPTCHA widget safely
+    if (captchaRef.current) {
+      captchaRef.current.reset();
+    }
   };
 
   const containerVariants = {
@@ -146,26 +172,24 @@ export default function Contact() {
             </div>
 
             {/* Map Placeholder */}
-            {/* Map Placeholder */}
-<motion.div 
-  className="mt-8 bg-gray-100 rounded-2xl p-8 text-center"
-  variants={itemVariants}
->
-  <i className="fas fa-map text-4xl text-gray-400 mb-4"></i>
-  <h4 className="font-semibold text-foreground mb-2">Interactive Map</h4>
-  <p className="text-muted-foreground mb-4">Get directions to our location</p>
+            <motion.div 
+              className="mt-8 bg-gray-100 rounded-2xl p-8 text-center"
+              variants={itemVariants}
+            >
+              <i className="fas fa-map text-4xl text-gray-400 mb-4"></i>
+              <h4 className="font-semibold text-foreground mb-2">Interactive Map</h4>
+              <p className="text-muted-foreground mb-4">Get directions to our location</p>
 
-  <a 
-    href="https://maps.app.goo.gl/ntn9QiSmQXMSjR6g8" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    <Button className="bg-gradient-to-r from-coral to-turquoise hover:from-turquoise hover:to-coral text-white">
-      <i className="fas fa-directions mr-2"></i> Get Directions
-    </Button>
-  </a>
-</motion.div>
-
+              <a 
+                href="https://maps.app.goo.gl/ntn9QiSmQXMSjR6g8" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Button className="bg-gradient-to-r from-coral to-turquoise hover:from-turquoise hover:to-coral text-white">
+                  <i className="fas fa-directions mr-2"></i> Get Directions
+                </Button>
+              </a>
+            </motion.div>
 
             {/* Social Media */}
             <motion.div className="mt-8" variants={itemVariants}>
@@ -232,17 +256,19 @@ export default function Contact() {
               </div>
 
               <div>
-                <Label htmlFor="subject">Subject *</Label>
-                <Select value={formData.subject} onValueChange={(value) => handleInputChange("subject", value)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a topic" />
+                <Label htmlFor="subject">Subject</Label>
+                <Select
+                  value={formData.subject}
+                  onValueChange={(value) => handleInputChange("subject", value)}
+                >
+                  <SelectTrigger id="subject" className="w-full">
+                    <SelectValue placeholder="Select a subject" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="enrollment">Enrollment Inquiry</SelectItem>
-                    <SelectItem value="programs">Program Information</SelectItem>
-                    <SelectItem value="facilities">Facility Tour</SelectItem>
-                    <SelectItem value="general">General Questions</SelectItem>
-                    <SelectItem value="feedback">Feedback</SelectItem>
+                    <SelectItem value="General Inquiry">General Inquiry</SelectItem>
+                    <SelectItem value="Support">Support</SelectItem>
+                    <SelectItem value="Feedback">Feedback</SelectItem>
+                    <SelectItem value="Others">Others</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -253,20 +279,23 @@ export default function Contact() {
                   id="message"
                   value={formData.message}
                   onChange={(e) => handleInputChange("message", e.target.value)}
-                  placeholder="Tell us how we can help you..."
+                  placeholder="Write your message here..."
                   rows={5}
                   required
                 />
               </div>
 
-              <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-orange-400 to-pink-400 hover:from-pink-400 hover:to-orange-400 text-white py-6 text-lg flex items-center justify-center rounded-md shadow-md hover:shadow-lg transition-all"
-                >
-                  <i className="fas fa-paper-plane mr-2 text-xl"></i> Send Message
-                </Button>
+              <div className="flex justify-center">
+                <ReCAPTCHA
+                  ref={captchaRef}
+                  sitekey="6LfyRFArAAAAAKOJUm8d2V8Bo5vUksqC1W1Ot4so"
+                  onChange={handleCaptchaChange}
+                />
+              </div>
 
-
+              <Button type="submit" className="w-full" disabled={!captchaValue}>
+                Send Message
+              </Button>
             </form>
           </motion.div>
         </div>
