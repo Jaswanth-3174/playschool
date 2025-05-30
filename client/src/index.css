@@ -23,6 +23,13 @@
   --destructive-foreground: 60 9.1% 97.8%;
   --ring: 212 47% 16%;
   --radius: 1rem;
+   --radius: 0.5rem;
+  --background: 210 40% 98%;
+  --foreground: 220 15% 20%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 15% 10%;
+  --primary: 220 90% 56%;
+  --primary-foreground: 0 0% 100%;
   
   /* Custom colors for playschool theme */
   --coral: 14 90% 70%; /* #FF8A65 - Soft Orange */
@@ -148,6 +155,13 @@
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   }
 }
+
+/* Make all FontAwesome icons medium sized */
+i.fas, i.far, i.fab {
+  font-size: 1.5rem !important; /* medium size, adjust as needed */
+  vertical-align: middle; /* keeps icons aligned nicely with text */
+}
+
 
 /* Custom animations */
 @keyframes float {

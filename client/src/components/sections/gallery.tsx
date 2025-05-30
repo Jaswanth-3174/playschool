@@ -93,7 +93,7 @@ export default function Gallery() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-fredoka text-foreground mb-4">Our Gallery</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Take a peek into the joyful moments and learning adventures at Rainbow Kids Playschool.</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Take a peek into the joyful moments and learning adventures at Robudz Play School.</p>
         </motion.div>
 
         {/* Gallery Grid */}

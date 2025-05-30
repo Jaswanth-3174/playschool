@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useState } from 'react';
 import Image1 from '../../assets/1.png'
 
 export default function Hero() {
@@ -26,16 +25,20 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center gradient-bg overflow-hidden">
+    <section 
+      id="home" 
+      className="relative z-0 min-h-screen flex items-center overflow-hidden pt-20
+                 bg-gradient-to-tr from-yellow-100 via-pink-100 to-pink-200"
+    >
       {/* Subtle Background Decoration */}
       <div className="absolute inset-0">
         <motion.div 
-          className="absolute top-20 left-10 w-16 h-16 bg-white/10 rounded-full"
+          className="absolute top-20 left-10 w-16 h-16 bg-white/20 rounded-full"
           animate={{ y: [-5, 5, -5] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div 
-          className="absolute bottom-32 right-20 w-12 h-12 bg-white/10 rounded-full"
+          className="absolute bottom-32 right-20 w-12 h-12 bg-white/20 rounded-full"
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
@@ -51,7 +54,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h1 
-              className="text-4xl md:text-6xl font-fredoka text-gray-800 mb-6"
+              className="text-4xl md:text-6xl font-fredoka text-gray-900 mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -59,12 +62,12 @@ export default function Hero() {
               Where Little <span className="text-orange-500">Dreams</span> Take Flight!
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
+              className="text-xl md:text-2xl text-gray-800 mb-8 leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Welcome to Little Stars Academy - where every child shines bright through creative learning, joyful discovery, and endless possibilities!
+              Welcome to Robudz Play School - where every child shines bright through creative learning, joyful discovery, and endless possibilities!
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
@@ -106,23 +109,6 @@ export default function Hero() {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             />
             
-            {/* Floating Achievement Cards */}
-            {/* <motion.div 
-              className="absolute -top-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border-l-4 border-orange-400"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center">
-                  <i className="fas fa-award text-white text-sm"></i>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-800 text-sm">Excellence Award</p>
-                  <p className="text-xs text-gray-600">Best Academy 2024</p>
-                </div>
-              </div>
-            </motion.div> */}
-
             <motion.div 
               className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border-l-4 border-blue-400"
               animate={{ y: [0, -5, 0] }}
@@ -133,7 +119,7 @@ export default function Hero() {
                   <i className="fas fa-heart text-white text-sm"></i>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-800 text-sm">300+ Families</p>
+                  <p className="font-semibold text-gray-900 text-sm">300+ Families</p>
                   <p className="text-xs text-gray-600">Trust Our Care</p>
                 </div>
               </div>

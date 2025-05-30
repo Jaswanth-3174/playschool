@@ -47,10 +47,10 @@ export default function Footer() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-coral to-turquoise rounded-full flex items-center justify-center mr-4">
+              {/* <div className="w-12 h-12 bg-gradient-to-br from-coral to-turquoise rounded-full flex items-center justify-center mr-4">
                 <i className="fas fa-rainbow text-white text-xl"></i>
-              </div>
-              <span className="text-2xl font-fredoka">Rainbow Kids Playschool</span>
+              </div> */}
+              <span className="text-2xl font-fredoka">Robudz Play School</span>
             </motion.div>
             <motion.p 
               className="text-gray-300 mb-6 max-w-md"
@@ -123,7 +123,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope text-coral mr-3"></i>
-                <span className="text-gray-300">hello@rainbowkids.com</span>
+                <span className="text-gray-300">robudzplayschool@gmail.com</span>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-clock text-coral mr-3"></i>
@@ -133,21 +133,43 @@ export default function Footer() {
           </motion.div>
         </motion.div>
 
-        {/* Footer Bottom */}
+        {/* Footer Bottom  credits*/}
         <motion.div 
+            className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center md:text-left space-y-1">
+              <p className="text-gray-400 text-sm">&copy; 2025 Robudz Play School. All rights reserved.</p>
+              <p className="text-gray-400 text-sm">
+                Website designed & developed by <a href="https://www.linkedin.com/in/jaswanths2004/" className="hover:text-coral underline" target="_blank" rel="noopener noreferrer">Jaswanth S</a>
+              </p>
+            </div>
+            
+            <div className="flex space-x-6 text-sm">
+              <a href="#" className="text-gray-400 hover:text-coral transition-colors duration-300">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-coral transition-colors duration-300">Terms of Service</a>
+              <a href="#" className="text-gray-400 hover:text-coral transition-colors duration-300">Cookie Policy</a>
+            </div>
+          </motion.div>
+
+
+        {/* <motion.div 
           className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Rainbow Kids Playschool. All rights reserved.</p>
+          <p className="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Robudz Play School. All rights reserved.</p>
           <div className="flex space-x-6 text-sm">
             <a href="#" className="text-gray-400 hover:text-coral transition-colors duration-300">Privacy Policy</a>
             <a href="#" className="text-gray-400 hover:text-coral transition-colors duration-300">Terms of Service</a>
             <a href="#" className="text-gray-400 hover:text-coral transition-colors duration-300">Cookie Policy</a>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </footer>
   );

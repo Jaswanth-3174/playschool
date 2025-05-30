@@ -259,9 +259,14 @@ export default function Contact() {
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-gradient-to-r from-coral to-turquoise hover:from-turquoise hover:to-coral text-white py-6 text-lg">
-                <i className="fas fa-paper-plane mr-2"></i> Send Message
-              </Button>
+              <Button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-orange-400 to-pink-400 hover:from-pink-400 hover:to-orange-400 text-white py-6 text-lg flex items-center justify-center rounded-md shadow-md hover:shadow-lg transition-all"
+                >
+                  <i className="fas fa-paper-plane mr-2 text-xl"></i> Send Message
+                </Button>
+
+
             </form>
           </motion.div>
         </div>
