@@ -32,7 +32,11 @@ export default function About() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-fredoka text-gray-800 mb-4">About Robudz Play School</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Dedicated to nurturing young minds through innovative learning, creative play, and a warm, supportive environment.</p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">We take immense pride in being the first in India to implement the PDHPE (Physical Development, Health and Physical Education) methodology, creating a transformative educational experience that goes beyond the classroom.
+            <br /><br />
+          What sets us apart is our legacy. Many of our alumni have grown into uniquely ambidextrous individuals, capable of using both hands and both sides of their brain with remarkable ease—a rare skill that symbolizes balance, versatility, and mental agility.
+          <br /><br />
+          We don’t just teach. We cultivate life skills for the real world—mind, body, and spirit in synchrony.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -50,7 +54,7 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="text-xl font-poppins font-semibold text-foreground mb-2">Our Mission</h3>
-                  <p className="text-muted-foreground">To create a loving, safe environment where children develop confidence, curiosity, and a lifelong love of learning through play-based education.</p>
+                  <p className="text-muted-foreground">To create a loving, safe environment where buds develop confidence, curiosity, and a lifelong love of learning through play-based education.</p>
                 </div>
               </motion.div>
 
@@ -60,7 +64,7 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="text-xl font-poppins font-semibold text-foreground mb-2">Our Vision</h3>
-                  <p className="text-muted-foreground">To be the leading playschool that nurtures each child's unique potential, fostering creativity, independence, and social skills.</p>
+                  <p className="text-muted-foreground">To be the leading playschool that nurtures each bud’s unique potential, fostering creativity, independence, and social skills.</p>
                 </div>
               </motion.div>
 
@@ -70,7 +74,9 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="text-xl font-poppins font-semibold text-foreground mb-2">Our Approach</h3>
-                  <p className="text-muted-foreground">We blend structured learning with free play, ensuring children develop academically, socially, and emotionally in age-appropriate ways.</p>
+                  <p className="text-muted-foreground">Our Approach is a thoughtful blend of modern pedagogy and time-tested ancient study techniques, striking a balance that respects heritage while embracing innovation. This harmony allows for holistic development, focusing equally on physical, psychological, health, sociological, and cognitive growth—all essential pillars for a strong foundation in life.
+                    <br /><br />
+                  Every activity we design serves a deeper purpose—stimulating brain hemispherical connections through play, art, movement, and logic, ensuring balanced engagement of both the left and right brain. This leads to not only improved learning outcomes but also creative problem-solving and emotional resilience.</p>
                 </div>
               </motion.div>
             </div>
