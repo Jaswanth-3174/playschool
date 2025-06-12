@@ -37,13 +37,13 @@ export default function Contact() {
     {
       icon: "fas fa-phone",
       title: "Phone",
-      content: "(+91) 01234 - 56789",
+      content: "(+91) 9840437323 / 8778775546",
       color: "turquoise"
     },
     {
       icon: "fas fa-envelope",
       title: "Email",
-      content: "hello@rainbowkids.com",
+      content: "robudzplayschool@gmail.com",
       color: "sky"
     },
     {

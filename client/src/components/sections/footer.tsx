@@ -11,10 +11,10 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: "fab fa-facebook", href: "#" },
-    { icon: "fab fa-instagram", href: "#" },
-    { icon: "fab fa-twitter", href: "#" },
-    { icon: "fab fa-youtube", href: "#" }
+    { icon: "fab fa-facebook", href: "https://www.facebook.com/share/16XNhfiZaU/" },
+    { icon: "fab fa-instagram", href: "https://www.instagram.com/robudz_playschool?igsh=MTlwdHU4eTdwcWlneA==" },
+    // { icon: "fab fa-twitter", href: "#" },
+    { icon: "fab fa-youtube", href: "https://www.youtube.com/@robudzplayschool?si=fpkW5QqtubU3v8Qh" }
   ];
 
   const handleNavClick = (href: string) => {
@@ -119,11 +119,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <i className="fas fa-phone text-coral mr-3"></i>
-                <span className="text-gray-300">(+91) 12345-67890</span>
+                <span className="text-gray-300">(+91) 9840437323 / 8778775546</span>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope text-coral mr-3"></i>
-                <span className="text-gray-300">robudzplayschool@gmail.com</span>
+                <span className="text-gray-300"> robudzplayschool@gmail.com </span>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-clock text-coral mr-3"></i>
