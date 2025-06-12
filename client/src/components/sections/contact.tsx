@@ -58,8 +58,7 @@ export default function Contact() {
     { icon: "fab fa-facebook", color: "coral", href: "https://www.facebook.com/share/16XNhfiZaU/" },
     { icon: "fab fa-instagram", color: "turquoise", href: "https://www.instagram.com/robudz_playschool?igsh=MTlwdHU4eTdwcWlneA==" },
     // { icon: "fab fa-twitter", color: "sky", href: "#" },
-    { icon: "fab fa-youtube", href: "https://www.youtube.com/@robudzplayschool?si=fpkW5QqtubU3v8Qh" }
-    { icon: "fab fa-youtube", color: "mint", href: "" }
+    { icon: "fab fa-youtube", color: "mint", href: "https://www.youtube.com/@robudzplayschool?si=fpkW5QqtubU3v8Qh" }
   ];
 
   const handleInputChange = (field: string, value: string) => {
