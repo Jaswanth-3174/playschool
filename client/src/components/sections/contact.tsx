@@ -288,7 +288,7 @@ export default function Contact() {
               <div className="flex justify-center">
                 <ReCAPTCHA
                   ref={captchaRef}
-                  sitekey="6LeeTFArAAAAAEiPJ6ZyMbhF9J4gffkTcdWBld0Y"
+                  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
                   onChange={handleCaptchaChange}
                 />
               </div>
