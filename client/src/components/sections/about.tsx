@@ -42,9 +42,9 @@ export default function About() {
             viewport={{ once: true }}
           >
             <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              We warmly welcome you and your child to <span className="font-semibold text-orange-600">ROBUDZ PLAY SCHOOL</span>. 
-              Our mission is to provide a safe, joyful, and stimulating environment for children aged 2–6 years, 
-              in line with the Early Childhood Care & Education (ECCE) Policy, 2013 by the Government of India.
+              We warmly welcome you and your Bud to <span className="font-semibold text-orange-600">ROBUDZ PLAY SCHOOL</span>. 
+              Our mission is to provide a safe, joyful, and stimulating environment for Buds aged 2–6 years, 
+              in line with the Early Budsd Care & Education (ECCE) Policy, 2013 by the Government of India.
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-4">
               <div className="bg-white px-4 py-2 rounded-full shadow-sm">
@@ -72,7 +72,7 @@ export default function About() {
             <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
               With tiny thumbs leaving colorful impressions, Robudz made big history by becoming the 
               <span className="text-yellow-700 font-bold"> first play school to set a Group World Record</span> with 
-              children under 5, creating a magnificent portrait of <span className="text-orange-600 font-bold">Dr. A.P.J. Abdul Kalam</span>.
+              Buds under 5, creating a magnificent portrait of <span className="text-orange-600 font-bold">Dr. A.P.J. Abdul Kalam</span>.
             </p>
           </motion.div>
 

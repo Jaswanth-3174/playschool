@@ -19,7 +19,7 @@ export default function Facilities() {
     {
       icon: "fas fa-book",
       title: "Library Corner",
-      description: "Cozy reading nook with children's books",
+      description: "Cozy reading nook with Buds books",
       color: "sky"
     },
     {
@@ -75,7 +75,7 @@ export default function Facilities() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-fredoka text-foreground mb-4">Our Facilities</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">State-of-the-art facilities designed with your child's safety, comfort, and learning in mind.</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">State-of-the-art facilities designed with your Buds safety, comfort, and learning in mind.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">

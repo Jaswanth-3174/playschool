@@ -32,7 +32,7 @@ export default function Contact() {
     {
       icon: "fas fa-phone",
       title: "Phone",
-      content: "(+91) 9840437323 / 8778775546",
+      content: "(+91) 9840437323 / 8778785546",
       color: "turquoise"
     },
     {
@@ -44,7 +44,7 @@ export default function Contact() {
     {
       icon: "fas fa-clock",
       title: "Hours",
-      content: "Monday - Friday: 7:00 AM - 6:00 PM\nSaturday: 8:00 AM - 4:00 PM\nSunday: Closed",
+      content: "Monday - Friday: 8:30 AM - 4:30 PM\nSaturday: 8:30 AM - 1:00 PM\nSunday: Closed",
       color: "mint"
     }
   ];

@@ -59,7 +59,7 @@ export default function Footer() {
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              Nurturing young minds through play-based learning, creativity, and endless adventures. Where every child's potential shines bright!
+              Nurturing young minds through play-based learning, creativity, and endless adventures. Where every Buds potential shines bright!
             </motion.p>
             <motion.div 
               className="flex space-x-4"
@@ -119,7 +119,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <i className="fas fa-phone text-coral mr-3"></i>
-                <span className="text-gray-300">(+91) 9840437323 / 8778775546</span>
+                <span className="text-gray-300">(+91) 9840437323 / 8778785546</span>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-envelope text-coral mr-3"></i>
@@ -127,7 +127,10 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <i className="fas fa-clock text-coral mr-3"></i>
-                <span className="text-gray-300">Mon-Fri: 7AM-6PM</span>
+                <span className="text-gray-300">
+                  Mon - Fri: 8:30 AM - 4:30 PM <br />
+                  Sat : 08:30AM - 1:00PM
+                </span>
               </li>
             </ul>
           </motion.div>

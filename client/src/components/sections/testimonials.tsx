@@ -59,7 +59,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-fredoka text-foreground mb-4">Happy Parents Say</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Don't just take our word for it - hear from the families who have experienced the Robudz Play School Kids difference.</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Don't just take our word for it - hear from the families who have experienced the Robudz Play School Buds difference.</p>
         </motion.div>
 
         {/* Testimonials Grid */}

@@ -22,7 +22,7 @@ export default function Programs() {
       icon: "fas fa-graduation-cap",
       title: "Pre-Kindergarten",
       ageRange: "4 - 5 years",
-      description: "Comprehensive school readiness program preparing children for kindergarten with advanced learning activities.",
+      description: "Comprehensive school readiness program preparing buds for kindergarten with advanced learning activities.",
       features: ["Kindergarten preparation", "Advanced reading and math", "Critical thinking skills", "Independence building"],
       color: "sky"
     }
@@ -85,7 +85,7 @@ export default function Programs() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-fredoka text-foreground mb-4">Our Programs</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Age-appropriate programs designed to nurture every aspect of your child's development.</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Age-appropriate programs designed to nurture every aspect of your Buds development.</p>
         </motion.div>
 
         {/* Programs Grid */}
