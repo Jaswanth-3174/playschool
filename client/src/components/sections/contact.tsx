@@ -1,15 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-// import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-
-// Dynamically import ReCAPTCHA to disable SSR (commented out for now)
-// const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), { ssr: false });
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -19,11 +15,6 @@ export default function Contact() {
     subject: "",
     message: ""
   });
-
-  // const [captchaValue, setCaptchaValue] = useState<string | null>(null);
-
-  // Correctly typed ref for ReCAPTCHA (commented out for now)
-  // const captchaRef = useRef<any>(null);
 
   const { toast } = useToast();
 
@@ -65,10 +56,6 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  // const handleCaptchaChange = (value: string | null) => {
-  //   setCaptchaValue(value);
-  // };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -79,15 +66,6 @@ export default function Contact() {
       });
       return;
     }
-
-    // Temporarily disabled captcha validation for development
-    // if (!captchaValue) {
-    //   toast({
-    //     title: "Please verify you are not a robot",
-    //     variant: "destructive"
-    //   });
-    //   return;
-    // }
 
     // Simulate form submission
     toast({
@@ -103,12 +81,6 @@ export default function Contact() {
       subject: "",
       message: ""
     });
-    // setCaptchaValue(null);
-
-    // Reset the reCAPTCHA widget safely (commented out)
-    // if (captchaRef.current) {
-    //   captchaRef.current.reset();
-    // }
   };
 
   const containerVariants = {
@@ -285,17 +257,6 @@ export default function Contact() {
                   required
                 />
               </div>
-
-              {/* Temporarily disabled reCAPTCHA for development */}
-              {/* 
-              <div className="flex justify-center">
-                <ReCAPTCHA
-                  ref={captchaRef}
-                  sitekey="YOUR_SITE_KEY_HERE"
-                  onChange={handleCaptchaChange}
-                />
-              </div>
-              */}
 
               <Button type="submit" className="w-full">
                 Send Message
