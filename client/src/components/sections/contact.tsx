@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,6 +16,9 @@ export default function Contact() {
     subject: "",
     message: ""
   });
+
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+  const captchaRef = useRef<ReCAPTCHA>(null);
 
   const { toast } = useToast();
 
@@ -56,12 +60,24 @@ export default function Contact() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const handleCaptchaChange = (value: string | null) => {
+    setCaptchaValue(value);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Please fill in all required fields",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!captchaValue) {
+      toast({
+        title: "Please verify you are not a robot",
         variant: "destructive"
       });
       return;
@@ -81,6 +97,12 @@ export default function Contact() {
       subject: "",
       message: ""
     });
+    setCaptchaValue(null);
+
+    // Reset the reCAPTCHA widget
+    if (captchaRef.current) {
+      captchaRef.current.reset();
+    }
   };
 
   const containerVariants = {
@@ -255,6 +277,14 @@ export default function Contact() {
                   placeholder="Write your message here..."
                   rows={5}
                   required
+                />
+              </div>
+
+              <div className="flex justify-center">
+                <ReCAPTCHA
+                  ref={captchaRef}
+                  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+                  onChange={handleCaptchaChange}
                 />
               </div>
 
