@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import GoogleMap from "@/components/ui/google-map";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -166,24 +167,16 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Map Placeholder */}
+            {/* Google Maps Section */}
             <motion.div 
-              className="mt-8 bg-gray-100 rounded-2xl p-8 text-center"
+              className="mt-8"
               variants={itemVariants}
             >
-              <i className="fas fa-map text-4xl text-gray-400 mb-4"></i>
-              <h4 className="font-semibold text-foreground mb-2">Interactive Map</h4>
-              <p className="text-muted-foreground mb-4">Get directions to our location</p>
-
-              <a 
-                href="https://maps.app.goo.gl/ntn9QiSmQXMSjR6g8" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <Button className="bg-gradient-to-r from-coral to-turquoise hover:from-turquoise hover:to-coral text-white">
-                  <i className="fas fa-directions mr-2"></i> Get Directions
-                </Button>
-              </a>
+              <h4 className="font-semibold text-foreground mb-4 flex items-center">
+                <i className="fas fa-map-marked-alt mr-2 text-coral"></i>
+                Find Us Here
+              </h4>
+              <GoogleMap height="350px" className="w-full" />
             </motion.div>
 
             {/* Social Media */}

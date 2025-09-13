@@ -132,6 +132,15 @@ export default function Footer() {
                   Sat : 08:30AM - 1:00PM
                 </span>
               </li>
+              <li className="pt-3">
+                <button
+                  onClick={() => handleNavClick("#contact")}
+                  className="flex items-center text-coral hover:text-turquoise transition-colors duration-300 font-medium"
+                >
+                  <i className="fas fa-map text-coral mr-2"></i>
+                  View Interactive Map
+                </button>
+              </li>
             </ul>
           </motion.div>
         </motion.div>
